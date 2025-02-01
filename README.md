@@ -1,3 +1,5 @@
+[![CICD](https://github.com/gavinest/ZeroOffset/actions/workflows/ci.yml/badge.svg)](https://github.com/gavinest/ZeroOffset/actions/workflows/ci.yml)
+
 # ZeroOffset
 
 A [Hammerspoon](https://www.hammerspoon.org/) to display a UTC timestamp in the menubar.

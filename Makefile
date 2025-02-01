@@ -4,7 +4,7 @@ shell:
 	docker compose run --rm -it --entrypoint sh zero-offset
 
 lint:
-	docker compose run --rm -it zero-offset luacheck --no-max-comment-line-length --globals hs -- .
+	docker compose run --rm zero-offset luacheck --no-max-comment-line-length --globals hs -- .
 
 build:
 	rm -rf $(BUILD_DIR)

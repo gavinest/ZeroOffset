@@ -1,4 +1,4 @@
-name: ci
+name: CICD
 
 on:
   push:
