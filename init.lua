@@ -76,7 +76,7 @@ function obj:toggleShowUtc()
         self.menuBarItem:setTitle(utc_time .. ' UTC')
     else
         self.menuBarItem:setTitle("Z")
-    end 
+    end
     self.showUtc = not self.showUtc
 end
 
