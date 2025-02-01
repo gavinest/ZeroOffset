@@ -1,0 +1,7 @@
+services:
+  zero-offset:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app/zero-offset
