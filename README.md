@@ -6,7 +6,7 @@ A [Hammerspoon](https://www.hammerspoon.org/) to display a UTC timestamp in the 
 
 * conform to [Spoon API](https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md#how-do-i-create-a-spoon)
 * ~~hotkeys~~
-* docs
+* ~~docs~~
 * tests
 * Time should actually increment
 * releases
@@ -46,3 +46,15 @@ spoon.SpoonInstall:andUse(
 
 3. [Alternative] If not using SpoonInstall, first make sure Hammerspoon is started. Then download and unzip `ZeroOffset.spoon.zip`.
 Open the `ZeroOffset.spoon` directory and Hammerspoon should prompt that the newly installed spoon is now available.
+
+## Contributing
+
+1. Make sure you have access to `hs.ipc` in your shell or the `makefile` won't work on certain commands. 
+
+```lua
+-- ~/.hammerspoon/init.lua
+
+require("hs.ipc")
+```
+
+Hammerspoon API [docs](https://www.hammerspoon.org/docs/index.html)

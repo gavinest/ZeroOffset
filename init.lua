@@ -18,6 +18,15 @@ obj.menuBarItem = nil
 obj.hotKeyToggle = nil
 obj.showUtc = false
 
+--- ZeroOffset:start()
+--- Method
+--- Starts ZeroOffset
+---
+--- Parameters:
+---  * None
+---
+--- Returns:
+---  * The ZeroOffset object
 function obj:start()
     if self.menuBarItem then self:stop() end
     self.menuBarItem = hs.menubar.new()
@@ -27,6 +36,15 @@ function obj:start()
     return self
 end
 
+--- ZeroOffset:stop()
+--- Method
+--- Stops ZeroOffset
+---
+--- Parameters:
+---  * None
+---
+--- Returns:
+---  * The ZeroOffset object
 function obj:stop()
     if self.menuBarItem then self.menuBarItem:delete() end
     if self.hotKeyToggle then self.hotKeyToggle:disable() end
@@ -34,6 +52,16 @@ function obj:stop()
     return self
 end
 
+--- ZeroOffset:bindHotkeys(mapping)
+--- Method
+--- Binds hotkeys for ZeroOffset
+---
+--- Parameters:
+---  * mapping - A table containing hotkey objifier/key details for the following items:
+---   * toggle - This will toggle the display of the UTC time in menubar
+---
+--- Returns:
+---  * The ZeroOffset object
 function obj:bindHotkeys(mapping)
     if self.hotKeyToggle then self.hotKeyToggle:delete() end
     local toggleMods = mapping["toggle"][1]
