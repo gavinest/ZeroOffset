@@ -1,15 +1,31 @@
-name: CICD
+name: ci
 
 on:
   push:
   pull_request:
+    branches:
+      - main
+
+runner: &default-runner
+  runs-on: ubuntu-latest
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
+  validate: 
+    <<: *default-runner
     steps:
       - name: checkout
         uses: actions/checkout@v3
 
       - name: lint
         run: make lint
+
+# deploy:
+#   <<: *default-runner
+#   needs: validate
+#   if: github.ref == 'refs/heads/main'
+#   steps:
+#     - name: checkout
+#       uses: actions/checkout@v3
+
+#     - name: deploy
+#       run: make deploy

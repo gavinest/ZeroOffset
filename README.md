@@ -1,4 +1,4 @@
-[![CICD](https://github.com/gavinest/ZeroOffset/actions/workflows/ci.yml/badge.svg)](https://github.com/gavinest/ZeroOffset/actions/workflows/ci.yml)
+[![ci](https://github.com/gavinest/ZeroOffset/actions/workflows/ci.yml/badge.svg)](https://github.com/gavinest/ZeroOffset/actions/workflows/ci.yml)
 
 # ZeroOffset
 
