@@ -6,6 +6,9 @@ shell:
 lint:
 	docker compose run --rm zero-offset luacheck --no-max-comment-line-length --globals hs -- .
 
+test:
+	docker compose run --rm zero-offset lua init_test.lua -v
+
 build:
 	rm -rf $(BUILD_DIR)
 	mkdir -p $(BUILD_DIR)
