@@ -10,7 +10,7 @@ A [Hammerspoon](https://www.hammerspoon.org/) to display a UTC timestamp in the 
 * ~~hotkeys~~
 * ~~docs~~
 * tests
-* Time should actually increment
+* ~~Time should actually increment~~
 * releases
 * logo
 * ~~CI~~
