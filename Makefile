@@ -13,7 +13,7 @@ build:
 	rm -rf $(BUILD_DIR)
 	mkdir -p $(BUILD_DIR)
 	cp init.lua $(BUILD_DIR)/init.lua
-	hs -c "hs.doc.builder.genJSON(\"$(shell pwd)\")" | grep -v "^--" > $(BUILD_DIR)/docs.json
+	hs -c "hs.doc.builder.genJSON(\"$(shell pwd)\")" | grep -v "^--" | tee $(BUILD_DIR)/docs.json docs/docs.json > /dev/null
 	(cd build && zip -r ../Spoons/ZeroOffset.spoon.zip ZeroOffset.spoon)
 
 .PHONY: shell lint build
