@@ -4,18 +4,6 @@
 
 A [Hammerspoon](https://www.hammerspoon.org/) to display a UTC timestamp in the menubar.
 
-## TODOs
-
-* ~~conform to [Spoon API](https://github.com/Hammerspoon/hammerspoon/blob/master/SPOONS.md#how-do-i-create-a-spoon)~~
-* ~~hotkeys~~
-* ~~docs~~
-* tests
-* ~~Time should actually increment~~
-* releases
-* logo
-* ~~CI~~
-* loom video
-
 ## Installation
 
 1. Install [Hammerspoon](https://www.hammerspoon.org/).

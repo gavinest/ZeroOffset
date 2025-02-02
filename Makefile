@@ -12,7 +12,8 @@ test:
 build:
 	rm -rf $(BUILD_DIR)
 	mkdir -p $(BUILD_DIR)
-	cp init.lua $(BUILD_DIR)/init.lua
+	cp init.lua $(BUILD_DIR)/
+	cp assets/icon.png $(BUILD_DIR)/
 	hs -c "hs.doc.builder.genJSON(\"$(shell pwd)\")" | grep -v "^--" | tee $(BUILD_DIR)/docs.json docs/docs.json > /dev/null
 	(cd build && zip -r ../Spoons/ZeroOffset.spoon.zip ZeroOffset.spoon)
 

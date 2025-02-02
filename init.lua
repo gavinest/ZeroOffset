@@ -96,9 +96,12 @@ end
 function obj:toggleShowUtc()
     if self.showUtc then
         self.timer:start()
+        self.menuBarItem:setIcon(nil)
     else
         self.timer:stop()
-        self.menuBarItem:setTitle("Z")
+        self.menuBarItem:setTitle(nil)
+        local iconPath = hs.spoons.resourcePath("icon.png")
+        self.menuBarItem:setIcon(hs.image.imageFromPath(iconPath):setSize({w=16,h=16}))
     end
     self.showUtc = not self.showUtc
 end
