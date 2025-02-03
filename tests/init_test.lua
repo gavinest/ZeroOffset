@@ -1,4 +1,5 @@
 -- luacheck: globals TestZeroOffset
+package.path = package.path .. ';./src/?.lua'
 local lu = require('luaunit')
 
 -- Mock hammerspoon globally before importing ZeroOffset
