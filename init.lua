@@ -95,6 +95,7 @@ end
 
 function obj:toggleShowUtc()
     if self.showUtc then
+        self:updateMenuText()
         self.timer:start()
         self.menuBarItem:setIcon(nil)
     else
