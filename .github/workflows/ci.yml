@@ -18,11 +18,17 @@ jobs:
       
       - name: test
         run: make test
+      
+      - name: debug
+        run: |
+          echo "GitHub ref: ${{ github.ref }}, ${{ github.event_name }}"
+          echo '${{ toJson(github.event) }}' | jq .
 
   release:
     needs: validate
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v') && github.event.base_ref == 'refs/heads/main'
+    if: startsWith(github.ref, 'refs/tags/v') 
+    # && github.event.base_ref == 'refs/heads/main'
     steps:
       - name: checkout
         uses: actions/checkout@v3
