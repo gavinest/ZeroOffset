@@ -55,6 +55,6 @@ require("hs.ipc")
 
 Commit files changed by the `make version` command to your feature branch. Open a pull requeest.
 
-Once the pull request is merged, make sure you are on the `main` branch an drun `make tag` to tag the commit with your version.
+Once the pull request is merged, make sure you are on the `main` branch and run `make tag` to tag the commit with your version.
 
 Push the tag to trigger the release workflow. `git push origin "v$(<VERSION)"`.
