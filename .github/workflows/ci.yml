@@ -29,3 +29,40 @@ jobs:
 
 #     - name: deploy
 #       run: make deploy
+
+  release:
+    needs: validate
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      
+      - name: Configure git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: version
+        run: |
+          local version=$(<VERSION)
+          echo "Creating version: ${version}"
+          sed -i '' -E 's/(obj.version = ")([0-9]+\.[0-9]+\.[0-9]+)(")/\1'"${version}"'\3/' src/init.lua
+          git commit -am "Release ${version}" \
+            && git tag -a ${version} -m "Release ${version}" \
+            && git push
+
+      - name: build
+        run: make build
+
+      # - name: releases
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     tag_name: ${{ github.ref_name }}
+      #     name: Release ${{ github.ref_name }}
+      #     body: "Automated release with zip file."
+      #     draft: false
+      #     prerelease: false
+      #     files: ZeroOffset.spoon.zip
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
