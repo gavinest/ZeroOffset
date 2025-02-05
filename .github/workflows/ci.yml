@@ -19,53 +19,21 @@ jobs:
       - name: test
         run: make test
 
-# deploy:
-#   runs-on: ubuntu-latest
-#   needs: validate
-#   if: github.ref == 'refs/heads/main'
-#   steps:
-#     - name: checkout
-#       uses: actions/checkout@v3
-
-#     - name: deploy
-#       run: make deploy
-
   release:
     needs: validate
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    permissions:
-      contents: write
+    if: github.ref_type == 'tag' && startsWith(github.ref_name, 'v') && github.ref == 'refs/heads/main'
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      
-      - name: Configure git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/gavinest/ZeroOffset.git
-      
-      - name: version
-        run: |
-          SEMVER=$(<VERSION)
-          echo "Creating version: ${SEMVER}"
-          sed -i -E 's/(obj.version = ")([0-9]+\.[0-9]+\.[0-9]+)(")/\1'"${SEMVER}"'\3/' src/init.lua
-          git commit -am "Release ${SEMVVER}" \
-            && git tag -a ${SEMVER} -m "Release ${SEMVER}" \
-            && git push
 
-      - name: build
-        run: make build
-
-      # - name: releases
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     tag_name: ${{ github.ref_name }}
-      #     name: Release ${{ github.ref_name }}
-      #     body: "Automated release with zip file."
-      #     draft: false
-      #     prerelease: false
-      #     files: ZeroOffset.spoon.zip
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: releases
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: Spoons/ZeroOffset.spoon.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
