@@ -9,7 +9,7 @@ obj.__index = obj
 
 -- Metadata
 obj.name = "ZeroOffset"
-obj.version = "0.0.6"
+obj.version = "0.0.7"
 obj.author = "Gavin Estenssoro"
 obj.homepage = "https://github.com/gavinest/ZeroOffset"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
