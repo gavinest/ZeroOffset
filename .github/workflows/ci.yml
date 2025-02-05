@@ -47,7 +47,7 @@ jobs:
         run: |
           SEMVER=$(<VERSION)
           echo "Creating version: ${SEMVER}"
-          sed -i '' -E 's/(obj.version = ")([0-9]+\.[0-9]+\.[0-9]+)(")/\1'"${SEMVER}"'\3/' src/init.lua
+          sed -i -E 's/(obj.version = ")([0-9]+\.[0-9]+\.[0-9]+)(")/\1'"${SEMVER}"'\3/' src/init.lua
           git commit -am "Release ${SEMVVER}" \
             && git tag -a ${SEMVER} -m "Release ${SEMVER}" \
             && git push
