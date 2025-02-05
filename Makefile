@@ -11,16 +11,15 @@ lint:
 test:
 	docker compose run --rm zero-offset sh -c 'find tests/ -name "*_test.lua" -exec lua {} \;'
 
-# Only use after bumping the VERSION file
-# This will build, commit, tag and push triggering a remote release.
 version:
-	@echo "Creating Version: v$(VERSION)"
+	@echo "Creating version: v$(VERSION)"
 	sed -i '' -E 's/(obj.version = ")([0-9]+\.[0-9]+\.[0-9]+)(")/\1'"$(VERSION)"'\3/' $(INIT_FILE)
 	make build
-	git commit -am "release v${VERSION}" \
-		&& git tag -a "v${VERSION}" -m "release v${VERSION}" \
-		&& git push origin $(shell git branch --show-current) \
-		&& git push --tags
+
+tag:
+	git fetch origin main --tags
+	@echo "Creating tag for version: v$(VERSION)"
+	git tag -a "v${VERSION}" -m "release v${VERSION}"
 
 # Create the .spoon.zip file and place in Spoons directory.
 build:
@@ -32,4 +31,4 @@ build:
 	hs -c "hs.doc.builder.genJSON(\"$(shell pwd)\"..\"/src\")" | grep -v "^--" | tee $(BUILD_DIR)/docs.json docs/docs.json > /dev/null; \
 	(cd build && zip -r ../Spoons/ZeroOffset.spoon.zip ZeroOffset.spoon)'
 
-.PHONY: shell lint test version build
+.PHONY: shell lint test version tag build

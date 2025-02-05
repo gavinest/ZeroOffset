@@ -39,7 +39,7 @@ Open the `ZeroOffset.spoon` directory and Hammerspoon should prompt that the new
 
 ## Contributing
 
-1. Make sure you have access to `hs.ipc` in your shell or the `makefile` won't work on certain commands. 
+1. Make sure you have access to `hs.ipc` in your shell or the `makefile` won't work on certain commands.
 
 ```lua
 -- ~/.hammerspoon/init.lua
@@ -47,4 +47,14 @@ Open the `ZeroOffset.spoon` directory and Hammerspoon should prompt that the new
 require("hs.ipc")
 ```
 
-Hammerspoon API [docs](https://www.hammerspoon.org/docs/index.html)
+2. Create a feature branch and make your changes and commit.
+
+4. If your changes do _not_ require a release, open a pull request with your changes.
+
+5. If your changes require a release, bump the version in the `VERSION` file. Run `make version`.
+
+Commit files changed by the `make version` command to your feature branch. Open a pull requeest.
+
+Once the pull request is merged, make sure you are on the `main` branch an drun `make tag` to tag the commit with your version.
+
+Push the tag to trigger the release workflow. `git push origin "v$(<VERSION)`.
