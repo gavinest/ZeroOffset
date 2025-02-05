@@ -19,7 +19,8 @@ version:
 	make build
 	git commit -am "release v${VERSION}" \
 		&& git tag -a "v${VERSION}" -m "release v${VERSION}" \
-		&& git push origin $(shell git branch --show-current) --tags
+		&& git push origin $(shell git branch --show-current) \
+		&& git push --tags
 
 # Create the .spoon.zip file and place in Spoons directory.
 build:
