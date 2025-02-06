@@ -102,7 +102,7 @@ function obj:toggleShowUtc()
         self.timer:stop()
         self.menuBarItem:setTitle(nil)
         local iconPath = hs.spoons.resourcePath("icon.png")
-        self.menuBarItem:setIcon(hs.image.imageFromPath(iconPath):setSize({w=16,h=16}))
+        self.menuBarItem:setIcon(hs.image.imageFromPath(iconPath):setSize({w=24,h=24}))
     end
     self.showUtc = not self.showUtc
 end
