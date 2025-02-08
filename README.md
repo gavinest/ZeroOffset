@@ -2,14 +2,23 @@
 
 # ZeroOffset
 
-A [Hammerspoon](https://www.hammerspoon.org/) to display a UTC timestamp in the menubar.
+A [Hammerspoon](https://www.hammerspoon.org/) to display a UTC timestamp in the menubar. Toggle on and off with a click or hotkeys.
+
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Contributing](#contributing)
 
 ## Installation
 
-1. Install [Hammerspoon](https://www.hammerspoon.org/).
+[Hammerspoon](https://www.hammerspoon.org/) must be installed and running.
 
-2. [Recommended] If using [SpoonInstall](https://www.hammerspoon.org/Spoons/SpoonInstall.html#repos) to manage Spoons,
-then add the following to your `~/.hammerspoon/init.lua`:
+### With SpoonInstall
+
+We recommend using [SpoonInstall](https://www.hammerspoon.org/Spoons/SpoonInstall.html#repos) to manage Spoons.
+
+If using SpoonInstall then add the ZeroOffset repo and config to your `~/.hammerspoon/init.lua` file.
 
 ```lua
 -- ~/.hammerspoon/init.lua
@@ -20,22 +29,42 @@ hs.loadSpoon("SpoonInstall")  -- should already be set if using SpoonInstall
 
 -- ...
 
+shortcut_keys = { "ctrl", "alt" }
+
 spoon.SpoonInstall.repos.ZeroOffset = {
     url = "https://github.com/gavinest/ZeroOffset",
     desc = "ZeroOffset spoon repository",
-    branch = "master",
+    branch = "main",
 }
 spoon.SpoonInstall:andUse(
     "ZeroOffset",
     {
         repo = "ZeroOffset",
         start = true,
+        hotkeys = {
+            toggle = {shortcut_keys, "z"}
+        },
     }
 )
+
 ```
 
-3. [Alternative] If not using SpoonInstall, first make sure Hammerspoon is started. Then download and unzip `ZeroOffset.spoon.zip`.
-Open the `ZeroOffset.spoon` directory and Hammerspoon should prompt that the newly installed spoon is now available.
+### Manual Installation
+
+If not using SpoonInstall.
+
+1. [download](https://github.com/gavinest/ZeroOffset/blob/main/Spoons/ZeroOffset.spoon.zip) and unzip `ZeroOffset.spoon.zip`.
+
+2. Open the `ZeroOffset.spoon` directory and Hammerspoon should prompt that the newly installed spoon is now available.
+
+3. Add the following to your `~/.hammerspoon/init.lua` file.
+
+```lua
+-- ~/.hammerspoon/init.lua
+hs.loadSpoon("ZeroOffset")
+spoon.ZeroOffset:bindHotkeys({toggle = {{"ctrl", "alt"}, "z"}})  -- or any other hotkey you prefer
+spoon.ZeroOffset:start()
+```
 
 ## Contributing
 

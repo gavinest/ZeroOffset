@@ -15,92 +15,26 @@
     "stripped_doc" : [
 
     ],
-    "desc" : "Display UTC time in the menu bar",
     "Deprecated" : [
 
     ],
     "type" : "Module",
+    "desc" : "Display UTC time in the menu bar",
     "Constructor" : [
 
     ],
     "doc" : "Display UTC time in the menu bar\n\nDownload: [https:\/\/github.com\/gavinest\/ZeroOffset\/blob\/main\/Spoons\/ZeroOffset.spoon.zip](https:\/\/github.com\/gavinest\/ZeroOffset\/blob\/main\/Spoons\/ZeroOffset.spoon.zip)",
-    "Method" : [
-      {
-        "doc" : "Initial setup for ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
-        "def" : "ZeroOffset:init()",
-        "stripped_doc" : [
-          "Initial setup for ZeroOffset",
-          ""
-        ],
-        "parameters" : [
-          " * None",
-          ""
-        ],
-        "notes" : [
-
-        ],
-        "signature" : "ZeroOffset:init()",
-        "type" : "Method",
-        "returns" : [
-          " * The ZeroOffset object"
-        ],
-        "name" : "init",
-        "desc" : "Initial setup for ZeroOffset"
-      },
-      {
-        "doc" : "Starts ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
-        "def" : "ZeroOffset:start()",
-        "stripped_doc" : [
-          "Starts ZeroOffset",
-          ""
-        ],
-        "parameters" : [
-          " * None",
-          ""
-        ],
-        "notes" : [
-
-        ],
-        "signature" : "ZeroOffset:start()",
-        "type" : "Method",
-        "returns" : [
-          " * The ZeroOffset object"
-        ],
-        "name" : "start",
-        "desc" : "Starts ZeroOffset"
-      },
-      {
-        "doc" : "Stops ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
-        "def" : "ZeroOffset:stop()",
-        "stripped_doc" : [
-          "Stops ZeroOffset",
-          ""
-        ],
-        "parameters" : [
-          " * None",
-          ""
-        ],
-        "notes" : [
-
-        ],
-        "signature" : "ZeroOffset:stop()",
-        "type" : "Method",
-        "returns" : [
-          " * The ZeroOffset object"
-        ],
-        "name" : "stop",
-        "desc" : "Stops ZeroOffset"
-      },
+    "items" : [
       {
         "doc" : "Binds hotkeys for ZeroOffset\n\nParameters:\n * mapping - A table containing hotkey objifier\/key details for the following items:\n  * toggle - This will toggle the display of the UTC time in menubar\n\nReturns:\n * The ZeroOffset object",
-        "def" : "ZeroOffset:bindHotkeys(mapping)",
-        "stripped_doc" : [
-          "Binds hotkeys for ZeroOffset",
-          ""
-        ],
+        "desc" : "Binds hotkeys for ZeroOffset",
         "parameters" : [
           " * mapping - A table containing hotkey objifier\/key details for the following items:",
           "  * toggle - This will toggle the display of the UTC time in menubar",
+          ""
+        ],
+        "stripped_doc" : [
+          "Binds hotkeys for ZeroOffset",
           ""
         ],
         "notes" : [
@@ -112,105 +46,171 @@
           " * The ZeroOffset object"
         ],
         "name" : "bindHotkeys",
-        "desc" : "Binds hotkeys for ZeroOffset"
+        "def" : "ZeroOffset:bindHotkeys(mapping)"
+      },
+      {
+        "doc" : "Initial setup for ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
+        "desc" : "Initial setup for ZeroOffset",
+        "parameters" : [
+          " * None",
+          ""
+        ],
+        "stripped_doc" : [
+          "Initial setup for ZeroOffset",
+          ""
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "ZeroOffset:init()",
+        "type" : "Method",
+        "returns" : [
+          " * The ZeroOffset object"
+        ],
+        "name" : "init",
+        "def" : "ZeroOffset:init()"
+      },
+      {
+        "doc" : "Starts ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
+        "desc" : "Starts ZeroOffset",
+        "parameters" : [
+          " * None",
+          ""
+        ],
+        "stripped_doc" : [
+          "Starts ZeroOffset",
+          ""
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "ZeroOffset:start()",
+        "type" : "Method",
+        "returns" : [
+          " * The ZeroOffset object"
+        ],
+        "name" : "start",
+        "def" : "ZeroOffset:start()"
+      },
+      {
+        "doc" : "Stops ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
+        "desc" : "Stops ZeroOffset",
+        "parameters" : [
+          " * None",
+          ""
+        ],
+        "stripped_doc" : [
+          "Stops ZeroOffset",
+          ""
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "ZeroOffset:stop()",
+        "type" : "Method",
+        "returns" : [
+          " * The ZeroOffset object"
+        ],
+        "name" : "stop",
+        "def" : "ZeroOffset:stop()"
       }
     ],
-    "Command" : [
+    "Method" : [
+      {
+        "doc" : "Initial setup for ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
+        "desc" : "Initial setup for ZeroOffset",
+        "parameters" : [
+          " * None",
+          ""
+        ],
+        "stripped_doc" : [
+          "Initial setup for ZeroOffset",
+          ""
+        ],
+        "notes" : [
 
+        ],
+        "signature" : "ZeroOffset:init()",
+        "type" : "Method",
+        "returns" : [
+          " * The ZeroOffset object"
+        ],
+        "name" : "init",
+        "def" : "ZeroOffset:init()"
+      },
+      {
+        "doc" : "Starts ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
+        "desc" : "Starts ZeroOffset",
+        "parameters" : [
+          " * None",
+          ""
+        ],
+        "stripped_doc" : [
+          "Starts ZeroOffset",
+          ""
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "ZeroOffset:start()",
+        "type" : "Method",
+        "returns" : [
+          " * The ZeroOffset object"
+        ],
+        "name" : "start",
+        "def" : "ZeroOffset:start()"
+      },
+      {
+        "doc" : "Stops ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
+        "desc" : "Stops ZeroOffset",
+        "parameters" : [
+          " * None",
+          ""
+        ],
+        "stripped_doc" : [
+          "Stops ZeroOffset",
+          ""
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "ZeroOffset:stop()",
+        "type" : "Method",
+        "returns" : [
+          " * The ZeroOffset object"
+        ],
+        "name" : "stop",
+        "def" : "ZeroOffset:stop()"
+      },
+      {
+        "doc" : "Binds hotkeys for ZeroOffset\n\nParameters:\n * mapping - A table containing hotkey objifier\/key details for the following items:\n  * toggle - This will toggle the display of the UTC time in menubar\n\nReturns:\n * The ZeroOffset object",
+        "desc" : "Binds hotkeys for ZeroOffset",
+        "parameters" : [
+          " * mapping - A table containing hotkey objifier\/key details for the following items:",
+          "  * toggle - This will toggle the display of the UTC time in menubar",
+          ""
+        ],
+        "stripped_doc" : [
+          "Binds hotkeys for ZeroOffset",
+          ""
+        ],
+        "notes" : [
+
+        ],
+        "signature" : "ZeroOffset:bindHotkeys(mapping)",
+        "type" : "Method",
+        "returns" : [
+          " * The ZeroOffset object"
+        ],
+        "name" : "bindHotkeys",
+        "def" : "ZeroOffset:bindHotkeys(mapping)"
+      }
     ],
     "Field" : [
 
     ],
-    "items" : [
-      {
-        "doc" : "Binds hotkeys for ZeroOffset\n\nParameters:\n * mapping - A table containing hotkey objifier\/key details for the following items:\n  * toggle - This will toggle the display of the UTC time in menubar\n\nReturns:\n * The ZeroOffset object",
-        "def" : "ZeroOffset:bindHotkeys(mapping)",
-        "stripped_doc" : [
-          "Binds hotkeys for ZeroOffset",
-          ""
-        ],
-        "parameters" : [
-          " * mapping - A table containing hotkey objifier\/key details for the following items:",
-          "  * toggle - This will toggle the display of the UTC time in menubar",
-          ""
-        ],
-        "notes" : [
+    "Command" : [
 
-        ],
-        "signature" : "ZeroOffset:bindHotkeys(mapping)",
-        "type" : "Method",
-        "returns" : [
-          " * The ZeroOffset object"
-        ],
-        "name" : "bindHotkeys",
-        "desc" : "Binds hotkeys for ZeroOffset"
-      },
-      {
-        "doc" : "Initial setup for ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
-        "def" : "ZeroOffset:init()",
-        "stripped_doc" : [
-          "Initial setup for ZeroOffset",
-          ""
-        ],
-        "parameters" : [
-          " * None",
-          ""
-        ],
-        "notes" : [
-
-        ],
-        "signature" : "ZeroOffset:init()",
-        "type" : "Method",
-        "returns" : [
-          " * The ZeroOffset object"
-        ],
-        "name" : "init",
-        "desc" : "Initial setup for ZeroOffset"
-      },
-      {
-        "doc" : "Starts ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
-        "def" : "ZeroOffset:start()",
-        "stripped_doc" : [
-          "Starts ZeroOffset",
-          ""
-        ],
-        "parameters" : [
-          " * None",
-          ""
-        ],
-        "notes" : [
-
-        ],
-        "signature" : "ZeroOffset:start()",
-        "type" : "Method",
-        "returns" : [
-          " * The ZeroOffset object"
-        ],
-        "name" : "start",
-        "desc" : "Starts ZeroOffset"
-      },
-      {
-        "doc" : "Stops ZeroOffset\n\nParameters:\n * None\n\nReturns:\n * The ZeroOffset object",
-        "def" : "ZeroOffset:stop()",
-        "stripped_doc" : [
-          "Stops ZeroOffset",
-          ""
-        ],
-        "parameters" : [
-          " * None",
-          ""
-        ],
-        "notes" : [
-
-        ],
-        "signature" : "ZeroOffset:stop()",
-        "type" : "Method",
-        "returns" : [
-          " * The ZeroOffset object"
-        ],
-        "name" : "stop",
-        "desc" : "Stops ZeroOffset"
-      }
     ],
     "name" : "ZeroOffset"
   }
