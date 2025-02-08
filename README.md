@@ -5,6 +5,9 @@
 A [Hammerspoon](https://www.hammerspoon.org/) to display a UTC timestamp in the menubar. Toggle on and off with a click or hotkeys.
 
 
+https://github.com/user-attachments/assets/1095736c-464c-4bd3-b4a2-79f2c3e80ec0
+
+
 ## Table of Contents
 
 - [Installation](#installation)
