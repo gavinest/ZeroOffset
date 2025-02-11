@@ -1,29 +1,24 @@
 -- luacheck: globals TestZeroOffset
-package.path = package.path .. ';./src/?.lua'
+package.path = package.path .. ';./src/?.lua;./tests/?.lua'
 local lu = require('luaunit')
-
--- Mock hammerspoon globally before importing ZeroOffset
-hs = {
-    menubar = {
-        new = function()
-            return {
-                setClickCallback = function() end
-            }
-        end
-    },
-    hotkey = {
-        enable = function() end
-    }
-}
-
 local ZeroOffset = require('init')
+local mock_hs = require('mock_hammerspoon')
+
+ZeroOffset.hs = mock_hs
 
 TestZeroOffset = {}
+
+function TestZeroOffset.setUp()
+    ZeroOffset:init()
+end
+
+function TestZeroOffset.tearDown()
+    ZeroOffset:stop()
+end
 
 function TestZeroOffset.testStartCreatesMenuBarItem()
     -- arrange
     lu.assertIsNil(ZeroOffset.menuBarItem)
-    ZeroOffset.toggleShowUtc = function() end
 
     -- act
     ZeroOffset:start()
@@ -32,4 +27,15 @@ function TestZeroOffset.testStartCreatesMenuBarItem()
     lu.assertNotNil(ZeroOffset.menuBarItem)
 end
 
-os.exit(lu.LuaUnit.run())
+function TestZeroOffset.testClickedShowsUtc()
+    -- arrange
+    ZeroOffset:start()
+
+    -- act
+    ZeroOffset:clicked()
+
+    -- assert
+    lu.assertStrContains(ZeroOffset.menuBarItem.title, 'UTC')
+end
+
+os.exit(lu.LuaUnit.run('-v'))

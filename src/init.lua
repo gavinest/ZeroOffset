@@ -4,7 +4,9 @@
 ---
 --- Download: [https://github.com/gavinest/ZeroOffset/blob/main/Spoons/ZeroOffset.spoon.zip](https://github.com/gavinest/ZeroOffset/blob/main/Spoons/ZeroOffset.spoon.zip)
 
-local obj = {}
+local obj = {
+    hs = hs,
+}
 obj.__index = obj
 
 -- Metadata
@@ -27,7 +29,7 @@ function obj:init()
     self.menuBarItem = nil
     self.hotKeyToggle = nil
     self.showUtc = false
-    self.timer = hs.timer.new(1, function() self:updateMenuText() end)
+    self.timer = self.hs.timer.new(1, function() self:updateMenuText() end)
     return self
 end
 
@@ -42,7 +44,7 @@ end
 ---  * The ZeroOffset object
 function obj:start()
     if self.menuBarItem then self:stop() end
-    self.menuBarItem = hs.menubar.new()
+    self.menuBarItem = self.hs.menubar.new()
     self.menuBarItem:setClickCallback(function() self:clicked() end)
 
     if self.hotKeyToggle then self.hotKeyToggle:enable() end
@@ -89,7 +91,7 @@ function obj:bindHotkeys(mapping)
     if self.hotKeyToggle then self.hotKeyToggle:delete() end
     local toggleMods = mapping["toggle"][1]
     local toggleKey = mapping["toggle"][2]
-    self.hotKeyToggle = hs.hotkey.new(toggleMods, toggleKey, function() self:clicked() end)
+    self.hotKeyToggle = self.hs.hotkey.new(toggleMods, toggleKey, function() self:clicked() end)
     return self
 end
 
@@ -101,8 +103,8 @@ function obj:toggleShowUtc()
     else
         self.timer:stop()
         self.menuBarItem:setTitle(nil)
-        local iconPath = hs.spoons.resourcePath("icon.png")
-        self.menuBarItem:setIcon(hs.image.imageFromPath(iconPath):setSize({w=24,h=24}))
+        local iconPath = self.hs.spoons.resourcePath("icon.png")
+        self.menuBarItem:setIcon(self.hs.image.imageFromPath(iconPath):setSize({w=24,h=24}))
     end
     self.showUtc = not self.showUtc
 end
